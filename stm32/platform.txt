@@ -26,7 +26,7 @@ version=0.1
 # STM32 compile variables
 # ----------------------
 
-compiler.path={runtime.ide.path}/hardware/tools/gcc-arm-none-eabi-4.8.3-2014q1/bin/
+compiler.path={runtime.tools.arm-none-eabi-gcc.path}/bin/
 
 compiler.cmsis_dir={build.system.path}/CMSIS/
 compiler.stdperiph_dir={build.system.path}/{build.series}_StdPeriph_Driver/
@@ -93,7 +93,7 @@ recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" -c {compiler.cpp.flags}
 recipe.S.o.pattern="{compiler.path}{compiler.c.cmd}" -c {compiler.c.flags} "{source_file}" -o "{object_file}"
 
 ## Create archives
-recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} {compiler.ar.extra_flags} "{build.path}/{archive_file}" "{object_file}"
+recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} {compiler.ar.extra_flags} "{archive_file_path}" "{object_file}"
 
 ## Combine gc-sections, archives, and objects
 recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} {object_files} -Wl,-whole-archive "{build.system.path}/lib{build.series}.a" "{build.path}/{archive_file}" -Wl,-no-whole-archive -o "{build.path}/{build.project_name}.elf" -larm_cortexM4lf_math
