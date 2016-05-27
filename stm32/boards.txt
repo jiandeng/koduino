@@ -216,4 +216,14 @@ f40_41x.menu.bootloader.mbv2.upload.options=rts_trpl_inv
 f40_41x.menu.bootloader.bootbut=Boot button
 f40_41x.menu.bootloader.bootbut.upload.options=dtr_rts
 
+f40_41x.menu.bootloader.stm32ld=Serial
+f40_41x.menu.bootloader.stm32ld.upload.tool=stm32ld
+f40_41x.menu.bootloader.stm32ld.upload.baud=230400
+f40_41x.menu.bootloader.stm32ld.upload.protocol=serial
+f40_41x.menu.bootloader.stm32ld.upload.options=mblc
 
+f40_41x.menu.bootloader.stlink=ST-LINK
+f40_41x.menu.bootloader.stlink.upload.tool=stlink
+f40_41x.menu.bootloader.stlink.upload.protocol=stlink
+f40_41x.menu.bootloader.stlink.upload.options=
+# f40_41x.upload.maximum_size=230400
