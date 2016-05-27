@@ -73,6 +73,10 @@ const uint8_t PC14 = 46;
 const uint8_t PC15 = 47;
 const uint8_t PD2 = 48;
 const uint8_t PH1 = 49;
+const uint8_t PD12 = 50;
+const uint8_t PD13 = 51;
+const uint8_t PD14 = 52;
+const uint8_t PD15 = 53;
 
 PinInfo PIN_MAP[] = {
   {GPIOC, 7, NOT_SET, 3, TIMER8, 2, NOT_SET, NOT_SET},
@@ -125,6 +129,10 @@ PinInfo PIN_MAP[] = {
   {GPIOC, 15, NOT_SET, NOT_SET, NOT_SET, NOT_SET, NOT_SET, NOT_SET},
   {GPIOD, 2, NOT_SET, NOT_SET, NOT_SET, NOT_SET, NOT_SET, NOT_SET},
   {GPIOH, 1, NOT_SET, NOT_SET, NOT_SET, NOT_SET, NOT_SET, NOT_SET},
+  {GPIOD, 12, NOT_SET, NOT_SET, NOT_SET, NOT_SET, NOT_SET, NOT_SET},
+  {GPIOD, 13, NOT_SET, NOT_SET, NOT_SET, NOT_SET, NOT_SET, NOT_SET},
+  {GPIOD, 14, NOT_SET, NOT_SET, NOT_SET, NOT_SET, NOT_SET, NOT_SET},
+  {GPIOD, 15, NOT_SET, NOT_SET, NOT_SET, NOT_SET, NOT_SET, NOT_SET},
 };
 
 const uint8_t TIMER2 = 0;
@@ -249,6 +257,7 @@ void variantInit() {
   TIMEBASE_MAP[1].timer = TIMER7;
 
   // GPIO
+  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
